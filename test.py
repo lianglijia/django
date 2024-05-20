@@ -5,3 +5,5 @@ d = c + 1
 print(a)
 d = 10
 print(d + a)
+e = 10
+print(e)
