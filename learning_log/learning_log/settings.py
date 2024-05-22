@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # my program
     "learning_logs",
     "accounts",
+    "django_bootstrap5",
 ]
 
 MIDDLEWARE = [
