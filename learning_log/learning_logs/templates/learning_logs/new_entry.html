@@ -1,10 +1,27 @@
 {% extends "learning_logs/base.html" %}
 {% block content %}
-<p><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic}}</a></p>
-<p>Add a new entry:</p>
-<form action="{% url 'learning_logs:new_entry' topic.id %}" method='post'>
-    {% csrf_token %}
-    {{ form.as_div }}
-    <button name='submit'>Add entry</button>
-</form>
+<div class="container mt-4">
+    <!-- Topic Link -->
+    <p>
+        <a href="{% url 'learning_logs:topic' topic.id %}" class="btn btn-primary">
+            {{ topic }}
+        </a>
+    </p>
+
+    <!-- Add a new entry heading -->
+    <p class="h5">Add a new entry:</p>
+
+    <!-- Form -->
+    <form action="{% url 'learning_logs:new_entry' topic.id %}" method="post" class="mt-3">
+        {% csrf_token %}
+
+        <!-- Form Fields -->
+        <div class="mb-3">
+            {{ form.as_p }}
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Add entry</button>
+    </form>
+</div>
 {% endblock content %}
